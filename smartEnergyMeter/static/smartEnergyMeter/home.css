@@ -1,0 +1,18 @@
+#navi{
+  width:100%;
+  position:fixed;
+}
+#right{
+  width:75%;
+  padding-left:6px;
+  padding-top: 50px;
+  float:left;
+
+}
+#leftdiv{
+  width:23%;
+  background-color: red;
+  float:right;
+  padding-top: 200px;
+  border:2px red solid;
+}
