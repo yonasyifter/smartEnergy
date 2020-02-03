@@ -1,16 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.contrib import admin
-from .models import Code
+from .models import EnergyMeter
 from tinymce.widgets import TinyMCE
 from django.db import models
 
+class SEMeter(admin.ModelAdmin):
+    list_display = ('full_name', 'house_number', 'reading', 'payment')
 # Register your models here.
-class CAdmin(admin.ModelAdmin):
-    fieldsets = [('Title and Date',{'fields':['title','date']}),
-                 ('Content Block',{'fields':['code']})]
-    formfield_overrides = {
-        models.TextField: {'widget': TinyMCE()},
-        }
-
-admin.site.register(Code,CAdmin)
+admin.site.register(EnergyMeter, SEMeter)

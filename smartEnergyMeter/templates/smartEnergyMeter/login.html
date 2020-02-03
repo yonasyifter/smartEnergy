@@ -1,0 +1,38 @@
+{% extends "smartEnergyMeter/layout.html" %}
+{% load static %}
+{% load i18n material_form %}
+{% block staticfile %}
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ <link rel="stylesheet" href="{% static "home.css" %}">
+{% endblock %}
+
+{% block body %}
+<main>
+ <div class="row">
+   <div class="col s12 m12 l6">
+     <div class='img'>
+       <img src="{% static "images/elpa.jpeg" %}" class="responsive-img " alt="electric utility" id='banner'>
+       </div>
+       </div>
+       <div class="col s12 m12 l6">
+         <div class="container">
+           {% load crispy_forms_tags %}
+           <form action="{% url 'home' %}" method='post'>
+               <h3 class='center orange-text'>Log In Form</h3>
+               {%csrf_token%}
+               {% form %}
+               {% part form.user_name prefix %}<i class='material-icons prefix orange lighten-4' >account_box</i>{% endpart%}
+               {% part form.password prefix %}<i class='material-icons prefix orange lighten-4'>lock_open</i>{% endpart %}
+               {% endform%}
+               <button required type="button" name="button" class='btn-large orange black-text right'  >Log In</button><br />
+               <p class='red lighten-4 '>if you haven't an account </p>
+           </form>
+         </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</main>
+<script src="{% static "login.js" %}" charset="utf-8"></script>
+{% endblock %}
