@@ -1,2 +1,4 @@
 # smartEnergy
-this deals with IOT
+ Smart Energy Meter iot based analysing the cost of consumed electric
+ 
+ 
